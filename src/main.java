@@ -45,7 +45,7 @@ public class main {
         System.out.println();
 
         System.out.println("task 8");
-        year(2300);
+        year(1200);
 
     }
 
@@ -125,10 +125,18 @@ public class main {
         
     }
 
-    public static void year (int y){
-        if (y != 0 && y % 4 == 0 && y%100 != 0 || y%400 == 0){
-            System.out.println("Год " + y + " високосный");
-        }else System.out.println("Год " + y + " не високосный");
+    public static void year (int y){ // Для 0 года, переиода с 1 по 400 и после 400 - догика немного будет отличаться. Добавил проверки.
+         if(y != 0){
+             if (y < 400){
+                 if (y % 4 == 0 && y%100 != 0 ){
+                     System.out.println("Год " + y + " високосный");
+                 }else System.out.println("Год " + y + " не високосный");
+             }
+             else if (y % 4 == 0 && y%100 != 0 || y%400 == 0){
+                 System.out.println("Год " + y + " високосный");
+             }else System.out.println("Год " + y + " не високосный");
+         }else System.out.println("не високосный");
+
     }
 
 
